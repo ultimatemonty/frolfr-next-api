@@ -36,7 +36,9 @@ defmodule FrolfrApi.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:ja_serializer, "~> 0.9.0"}]
+     {:ja_serializer, "~> 0.9.0"},
+     {:guardian, "~> 0.13.0"},
+     {:cors_plug, "~> 1.1"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
