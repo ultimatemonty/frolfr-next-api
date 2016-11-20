@@ -7,6 +7,7 @@ defmodule FrolfrApi.Router do
 
   scope "/api", FrolfrApi do
     pipe_through :api
-	resources "/users", UserController, except: [:new, :edit]
+	  resources "/session", SessionController, only: [:index]
+	  resources "/users", UserController, except: [:new, :edit]
   end
 end
