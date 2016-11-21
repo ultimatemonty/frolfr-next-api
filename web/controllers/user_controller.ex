@@ -28,8 +28,14 @@ defmodule FrolfrApi.UserController do
   end
 
   def show(conn, %{"id" => id}) do
-    user = Repo.get!(User, id)
-    render(conn, "show.json", data: user)
+    case Repo.get(User, id) do
+        nil ->
+          conn
+          |> put_status(404)
+          |> render("error.json")
+        user ->
+          render(conn, "show.json", data: user)
+    end
   end
 
   def update(conn, %{"id" => id, "data" => data = %{"type" => "user", "attributes" => _user_params}}) do

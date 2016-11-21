@@ -19,7 +19,7 @@ defmodule FrolfrApi.Mixfile do
   def application do
     [mod: {FrolfrApi, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,8 @@ defmodule FrolfrApi.Mixfile do
      {:cowboy, "~> 1.0"},
      {:ja_serializer, "~> 0.9.0"},
      {:guardian, "~> 0.13.0"},
-     {:cors_plug, "~> 1.1"}]
+     {:cors_plug, "~> 1.1"},
+     {:comeonin, "~> 2.4"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
